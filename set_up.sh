@@ -1,10 +1,11 @@
 #!/bin/bash 
 cd /
+apt update
 apt install -y python3-certbot-nginx certbot nginx cockpit ufw git curl
 sudo sh -c "echo deb https://mega.nz/linux/MEGAsync/xUbuntu_$((lsb_release -a 2> /dev/null)|grep Release | awk '{print $2}')/ ./ >> /etc/apt/sources.list"
 curl -fsSL https://mega.nz/keys/MEGA_signing.key | sudo apt-key add -
-sudo apt update
-sudo apt install -y megacmd
+apt update
+apt install -y megacmd
 ufw enable
 ufw default deny
 ufw limit 22
